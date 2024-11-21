@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    image: ubuntu:latest
+    volumes: # マウントするディレクトリ
+      - /home/$USER:/volumes
+    command: 'echo "hello"' # docker compose up で実行されるコマンド
+    environment: # 環境変数
+      - USER=$USER 
+    working_dir: /volumes # 初期配置
